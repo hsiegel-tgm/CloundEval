@@ -1,0 +1,197 @@
+\documentclass[a4paper,nochapterprefix,ngerman,12pt]{scrreprt} 
+
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{listings}
+\lstset{language=bash}
+\usepackage{glossaries}
+\usepackage{cite}
+\usepackage{placeins}
+\usepackage{fixltx2e}
+\usepackage{fontenc}
+\usepackage{multirow}
+%\usepackage{scrpage2}
+%\clearscrheadfoot
+%\pagestyle{scrheadings}
+\usepackage[
+top    = 2cm,
+bottom = 3.5cm,
+left   = 3cm,
+right  = 3cm]{geometry}
+\setcounter{secnumdepth}{4}
+\parindent0pt 
+\usepackage{hyperref} 
+
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	xleftmargin=\parindent,
+	language=bash,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+	belowcaptionskip=1\baselineskip,
+	frame=L,
+	xleftmargin=\parindent,
+	language=[x86masm]Assembler,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+
+
+\makeglossaries
+\newglossaryentry{ip} {name=IP, description={Internet Protocol}}
+\renewcommand*\glspostdescription{\dotfill}
+
+
+
+
+\title{Vergleich\\von Cloud-Stack Lösungen}
+
+\author{Belinic Vennesa}
+
+\date{\today}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\newcommand{\command}[1]{{\texttt{\\\color{blue} #1\\}}}
+\newcommand{\error}[1]{{\texttt{\\\color{red} #1\\}}}
+\newcommand{\comment}[1]{{\texttt{\\\color{OliveGreen} #1\\}}}
+
+\newcommand{\citeof}[2]{{
+		\par \begingroup \leftskip=1cm \noindent \textit 
+		''#1'' \cite{#2} \\
+		\par \endgroup
+	}}
+
+% UseCase
+% \insertpicture{mik.png}{Some picture}{\cite{bk_key}}{itm:pic1}{0.5}
+\newcommand{\insertpicture}[5]{{
+		\begin{figure}[!htb]
+			\centering\includegraphics[width=#5\textwidth]{#1}
+			\caption[#2 #3]{#2}
+			\label{#4}
+		\end{figure}
+		\FloatBarrier
+	}}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[L]{© Belinić Vennesa}
+\fancyfoot[R]{\thepage / \pageref{lastpage}}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\begin{document}
+
+\maketitle
+\pagenumbering{Roman}
+
+\newpage
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+%\ohead{\headmark}
+%\automark{section}
+%\ifoot{© Belinić Vennesa}
+%\ofoot{\pagemark/n}
+
+\chapter{Einfürhung} \thispagestyle{fancy}
+Grundsätzlich handelt es sich bei allen Produkten um Cloud-Plattformen.
+
+\chapter{Apache CloudStack} \thispagestyle{fancy}
+\section{Historische Entwicklung \cite{apachehistory,apacheusers}}
+Apache Cloudstack begann als Projekt des Start-Up Unternehmens VMOps und wurde im Jahr 2008 bekannt. Später änderte sich der Name des Unternehmens in Cloud.com und im Mai 2010 wurde der Großteil der Sources unter der GNU General Public License version 3 (GPLv3) veröffentlicht.\\\\
+Im Juli 2011 wurde das Unternehmen Cloud.com von Citrix aufgekauft. Dieses veröffentlichte den Rest des Codes auch unter der GPLv3 im August 2011 und machte einen Release CloudStack 3.0 Anfang des Jahres 2012.\\\\
+Im April 2012 wurde CloudStack neu veröffentlich unter der Apache Software License 2.0 (ASLv2) und an Apache Incubator (Apache Projekte die von externen Unternehmen finanziert werden, wo versucht wird eine Community aufzubauen) abgegeben. Nachdem eine Community und eine Infrastruktur aufgebaut war, wurde der erste groß stable Release gemacht am 6.November 2012.\\\\
+Apache CloudStack hat das Incubator Programm erfolgreich ''absolviert''.\\\\\\
+\textbf{Einige der Unternehmen die dieses Produkt benutzen:\\\\}
+\begin{minipage}{.5\textwidth}
+	\begin{itemize}
+		\item DATACENTER Services
+		\item UPCnet
+		\item Apple
+		\item Dell
+		\item Disney
+		\item EnterpriseDB
+		\item Fujitsu FIP Corporation
+		\item Logicworks
+		\item Microland Ltd
+		\item Nokia
+	\end{itemize}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+	\begin{itemize}
+		\item OpenERP
+		\item Orange
+		\item SAP
+		\item ScienceLogic, Inc.
+		\item Shopzilla
+		\item TomTom
+		\item UniSystems
+		\item Vision Solutions, Inc.
+		\item VMTurbo
+		\item Zynga
+	\end{itemize}
+\end{minipage}
+
+\section{Lizenz}
+\section{Features}
+(welche as-a-Service Varianten werden unterstützt)
+\section{Voraussetzungen}
+(welche Virtualisierungs-Lösungen werden unterstützt/benötigt)
+\section{Dokumentation}
+Umfang und Qualität der
+
+\chapter{Lösung2} \thispagestyle{fancy}
+\section{Historische Entwicklung}
+welche Firmen stehen dahinter, wo/von wem wird es verwendet?
+\section{Lizenz}
+\section{Features}
+(welche as-a-Service Varianten werden unterstützt)
+\section{Voraussetzungen}
+(welche Virtualisierungs-Lösungen werden unterstützt/benötigt)
+\section{Dokumentation}
+Umfang und Qualität der
+
+\chapter{Lösung3} \thispagestyle{fancy}
+\section{Historische Entwicklung}
+welche Firmen stehen dahinter, wo/von wem wird es verwendet?
+\section{Lizenz}
+\section{Features}
+(welche as-a-Service Varianten werden unterstützt)
+\section{Voraussetzungen}
+(welche Virtualisierungs-Lösungen werden unterstützt/benötigt)
+\section{Dokumentation}
+Umfang und Qualität der
+
+\chapter{Fazit} \thispagestyle{fancy}
+
+\bibliography{sources} \thispagestyle{fancy}
+\bibliographystyle{alpha} \thispagestyle{fancy}
+
+\listoffigures \thispagestyle{fancy}
+
+\printglossary[style=tree,title={Glossar}]  \thispagestyle{fancy}
+
+\label{lastpage}
+
+\end{document}
