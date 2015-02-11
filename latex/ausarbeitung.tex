@@ -13,18 +13,16 @@
 \usepackage{cite}
 \usepackage{placeins}
 \usepackage{fixltx2e}
-\usepackage{fontenc}
 \usepackage{multirow}
-%\usepackage{scrpage2}
-%\clearscrheadfoot
-%\pagestyle{scrheadings}
 \usepackage[
 top    = 2cm,
 bottom = 3.5cm,
 left   = 3cm,
 right  = 3cm]{geometry}
 \setcounter{secnumdepth}{4}
-\parindent0pt 
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\parindent0pt
 \usepackage{hyperref} 
 
 \lstdefinestyle{customc}{
@@ -170,14 +168,62 @@ Apache CloudStack hat das Incubator Programm erfolgreich ''absolviert''.\\\\\\
 		\item Zynga
 	\end{itemize}
 \end{minipage}
-
 \section{Lizenz}
+Seit April 2012 steht CloudStack unter der Apache Software License 2.0 \cite{apachehistory}\\\\
+Jedoch ist der Support kostenpflichtig. \cite{computerwochecloudstack} \\\\
 \section{Features}
-(welche as-a-Service Varianten werden unterstützt)
-\section{Voraussetzungen}
-(welche Virtualisierungs-Lösungen werden unterstützt/benötigt)
+CloudStack besitzt eine Open-Source IaaS (Infrastructure as a Service) Plattform welche sich um die Provisionierung und Orchestrierung von folgenden Komponenten kümmert:
+\begin{itemize}
+\item Storage Pools
+\item IPv4 und IPv6 Netzsegmenten
+\item Compute Ressourcen
+\end{itemize}
+\cite{vergleich}\\\\\\
+\textbf{Einige weitere nützliche und wichtige Features:}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Image Management
+		\item Scheduling
+		\item Storage
+		\item Monitoring
+		\item HA
+		\item Management Tools
+		\item GUI
+		\item CLI
+		\item Cloud-Schnittstellen \\(AWS: EC2/S3)
+		\item Self-Service
+		\item Programmier-Schnittstellen (REST)
+		\item User-Management
+		\item Availability Zones
+	\end{itemize}
+\end{multicols}
+
+\newpage
+\section{Voraussetzungen \cite{apachereq}}
+\textbf{Management Server, Database und Storage System Anforderungen}
+\begin{itemize}
+\item Operating system: Linux, Windows, BSD \\
+(Empfohlen: CentOS/RHEL 6.3+ oder Ubuntu 12.04(.1))
+\item 64-bit x86 CPU (je mehr Kerne desto besser die Performance)
+\item 4 GB RAM
+\item 250 GB lokaler Speicher (es sind jedoch 500 GB empfohlen)
+\item min. eine Domain Name Registry
+\item Statisch zugewiesene IP-Adresse
+\item der Befhl hostname muss den gesamten Domainname zurückgeben\\
+\end{itemize}
+\textbf{Host/Hypervisor System Anforderungen}
+\begin{itemize}
+	\item unterstützt HVM (Intel-VT or AMD-V enabled)
+	\item 64-bit x86 CPU (je mehr Kerne desto besser die Performance)
+	\item Hardware Virtualiserung
+	\item 4 GB RAM
+	\item 36 GB lokaler Speicher
+	\item min. eine Domain Name Registry\\
+\end{itemize}
+
 \section{Dokumentation}
-Umfang und Qualität der
+Die Dokumentation kann online \cite{apachedoc} eingesehen werden.\\\\
+Sie ist sehr umfangreich und auf englisch.
 
 \chapter{Eucalyptus Systems} \thispagestyle{fancy}
 Eucalyptus steht für Elastic Utility Computing Architecture for Linking Your Programs To Useful Systems. \cite{EucalyptusSlideShare}\\
@@ -290,7 +336,7 @@ Auf den folgenden Distributionen ist Open Stack allerdings ebenfalls gepackaged 
 	\item Open SUSE
 	\item Debian
 \end{itemize}
-Genaue Hardwareanforderungen für die Verwendung des Systems findest man leider kaum, allerdings wird im eigenen Q&A-Berreich geschätzt, dass es rund vier bis sechs Gigerbyte sind.\\
+Genaue Hardwareanforderungen für die Verwendung des Systems findest man leider kaum, allerdings wird im eigenen Q\&A-Berreich geschätzt, dass es rund vier bis sechs Gigerbyte sind.\\
 Da das Sytsem auf Python basiert wird solch eine Version benötigt, Empfohlen wird hierbei 2.6 oder 22.7, wobei die Unterstützung von Jango ein Musskriterium ist.
 Für die Minimalrealisierung müssen die Komponente Compute und der Identity Service installiert werden. Der Hersteller schätzt den Umfang dieser Installation auf vier bis sechs Gigerbyte, gibt allerdings keine Informationen über etaige andere Hardware anforderungen.\\
 Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen.
