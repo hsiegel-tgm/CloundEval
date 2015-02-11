@@ -118,8 +118,38 @@ right  = 3cm]{geometry}
 
 
 \begin{document}
+\begin{titlepage}
+\begin{center}
+% Oberer Teil der Titelseite:
+\includegraphics[width=0.5\textwidth]{logo}\\[1cm]    
 
-\maketitle
+\textsc{\LARGE Technologisches Gewerbe Museum}\\[1.5cm]
+
+% Title
+\rule{1.0\textwidth}{1mm}
+{ \huge \bfseries  \\\large SYT\\ \huge Cloud Evaluation \\[0.4cm] }
+
+\rule{1.0\textwidth}{1mm}
+
+% Author and supervisor
+\noindent 
+\vspace{7cm}
+
+\begin{center}
+\large
+Author: 
+Belinic \textsc{Vennesa} \&
+Haidn \textsc{Martin} \&
+Siegel \textsc{Hannah}
+\end{center}
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
 \pagenumbering{Roman}
 
 \newpage
@@ -129,12 +159,11 @@ right  = 3cm]{geometry}
 \pagenumbering{arabic}
 %\ohead{\headmark}
 %\automark{section}
-%\ifoot{© Belinić Vennesa}
 %\ofoot{\pagemark/n}
 
 \chapter{Einfürhung} \thispagestyle{fancy}
 Grundsätzlich handelt es sich bei allen Produkten um Cloud-Plattformen.
-
+%TODO
 \chapter{Apache CloudStack} \thispagestyle{fancy}
 \section{Historische Entwicklung \cite{apachehistory,apacheusers}}
 Apache Cloudstack begann als Projekt des Start-Up Unternehmens VMOps und wurde im Jahr 2008 bekannt. Später änderte sich der Name des Unternehmens in Cloud.com und im Mai 2010 wurde der Großteil der Sources unter der GNU General Public License version 3 (GPLv3) veröffentlicht.\\\\
@@ -290,7 +319,7 @@ Auf den folgenden Distributionen ist Open Stack allerdings ebenfalls gepackaged 
 	\item Open SUSE
 	\item Debian
 \end{itemize}
-Genaue Hardwareanforderungen für die Verwendung des Systems findest man leider kaum, allerdings wird im eigenen Q&A-Berreich geschätzt, dass es rund vier bis sechs Gigerbyte sind.\\
+Genaue Hardwareanforderungen für die Verwendung des Systems findest man leider kaum, allerdings wird im eigenen Q\&A-Berreich geschätzt, dass es rund vier bis sechs Gigerbyte sind.\\
 Da das Sytsem auf Python basiert wird solch eine Version benötigt, Empfohlen wird hierbei 2.6 oder 22.7, wobei die Unterstützung von Jango ein Musskriterium ist.
 Für die Minimalrealisierung müssen die Komponente Compute und der Identity Service installiert werden. Der Hersteller schätzt den Umfang dieser Installation auf vier bis sechs Gigerbyte, gibt allerdings keine Informationen über etaige andere Hardware anforderungen.\\
 Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen.
@@ -307,6 +336,8 @@ Darüber hinaus stehen dem Entwickler ein Wiki und ein Forum zur Verfügung, um 
 Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden.
 
 \chapter{Fazit} \thispagestyle{fancy}
+%TODO
+
 
 \bibliography{sources} \thispagestyle{fancy}
 \bibliographystyle{alpha} \thispagestyle{fancy}
