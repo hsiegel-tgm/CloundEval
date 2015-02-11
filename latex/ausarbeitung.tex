@@ -118,8 +118,38 @@ right  = 3cm]{geometry}
 
 
 \begin{document}
+\begin{titlepage}
+\begin{center}
+% Oberer Teil der Titelseite:
+\includegraphics[width=0.5\textwidth]{logo}\\[1cm]    
 
-\maketitle
+\textsc{\LARGE Technologisches Gewerbe Museum}\\[1.5cm]
+
+% Title
+\rule{1.0\textwidth}{1mm}
+{ \huge \bfseries  \\\large SYT\\ \huge Cloud Evaluation \\[0.4cm] }
+
+\rule{1.0\textwidth}{1mm}
+
+% Author and supervisor
+\noindent 
+\vspace{7cm}
+
+\begin{center}
+\large
+Author: 
+Belinic \textsc{Vennesa} \&
+Haidn \textsc{Martin} \&
+Siegel \textsc{Hannah}
+\end{center}
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
 \pagenumbering{Roman}
 
 \newpage
@@ -129,12 +159,11 @@ right  = 3cm]{geometry}
 \pagenumbering{arabic}
 %\ohead{\headmark}
 %\automark{section}
-%\ifoot{© Belinić Vennesa}
 %\ofoot{\pagemark/n}
 
-\chapter{Einfürhung} \thispagestyle{fancy}
-Grundsätzlich handelt es sich bei allen Produkten um Cloud-Plattformen.
-
+%\chapter{Einfürhung} \thispagestyle{fancy}
+%Grundsätzlich handelt es sich bei allen Produkten um Cloud-Plattformen.
+%%TODO
 \chapter{Apache CloudStack} \thispagestyle{fancy}
 \section{Historische Entwicklung \cite{apachehistory,apacheusers}}
 Apache Cloudstack begann als Projekt des Start-Up Unternehmens VMOps und wurde im Jahr 2008 bekannt. Später änderte sich der Name des Unternehmens in Cloud.com und im Mai 2010 wurde der Großteil der Sources unter der GNU General Public License version 3 (GPLv3) veröffentlicht.\\\\
@@ -322,6 +351,7 @@ Auf den folgenden Distributionen ist Open Stack allerdings ebenfalls gepackaged 
 	\item Open SUSE
 	\item Debian
 \end{itemize}
+<<<<<<< HEAD
 
 Da das Sytsem auf Python basiert wird solch eine Version benötigt, Empfohlen wird hierbei 2.6 oder 2.7, wobei die Unterstützung von Jango ein Musskriterium ist.
 Für die Minimalrealisierung müssen die Komponente Compute Node und Controller Node installiert werden, welche mit den folgenden Hardwareanforderungen definiert sind:\\
@@ -331,9 +361,15 @@ Für die Minimalrealisierung müssen die Komponente Compute Node und Controller 
 \end{itemize}
 Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen. \cite{OS-BasicEnvironment} 
 
+=======
+Genaue Hardwareanforderungen für die Verwendung des Systems findest man leider kaum, allerdings wird im eigenen Q\&A-Berreich geschätzt, dass es rund vier bis sechs Gigerbyte sind.\\
+Da das Sytsem auf Python basiert wird solch eine Version benötigt, Empfohlen wird hierbei 2.6 oder 22.7, wobei die Unterstützung von Jango ein Musskriterium ist.
+Für die Minimalrealisierung müssen die Komponente Compute und der Identity Service installiert werden. Der Hersteller schätzt den Umfang dieser Installation auf vier bis sechs Gigerbyte, gibt allerdings keine Informationen über etaige andere Hardware anforderungen.\\
+Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen.
+>>>>>>> f7064d62cbd0a446acba2841cf606ea50d9c5314
 \section{Dokumentation}
 Open Stack geniest eine Umfangreiche Dokumentation über die API's seiner Komponenten und liefert darüber hinaus detailiierte, textuelle beschreibungen der Funktionsweise, sowie Code-Beispiele zu den Methoden.\\
-Die folgenden Linux Umgebungen sind ofiziell dokumentiert:
+Die folgenden Linux Umgebungen sind offiziell dokumentiert:
 \begin{itemize}
 	\item Ubuntu 14.04
 	\item Fedora 20
@@ -341,9 +377,44 @@ Die folgenden Linux Umgebungen sind ofiziell dokumentiert:
 \end{itemize}
 Auf den Distributionen Open SUSE und Debian ist Open Stack zwar ebenfalls gepackaged und Lauffähig, allerdings ist man bei Hilfe auf Foren und Communities angewiesen.
 Darüber hinaus stehen dem Entwickler ein Wiki und ein Forum zur Verfügung, um mehr wissen zu erlangen oder sich mit anderen Auszutauschen.\\
+<<<<<<< HEAD
 Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden. \cite{OS-Docs}
+=======
+Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden. 
+>>>>>>> f7064d62cbd0a446acba2841cf606ea50d9c5314
 
 \chapter{Fazit} \thispagestyle{fancy}
+Apache CloudStack ist ein (fast) fertiges Produkt. Mann muss hier nicht mehr viel selbst machen.\\
+OpenStack ist eher ein Framework, es muss durch eigene Entwicklung angepasst werden und man muss sich hierbei besser auskennen.\cite{OSundAVerg} OpenStack wird eher von grossen Firmen verwendet, und auf Grund der Komplezität auch oft über einen Provider verwendet. \cite{allthreeverg}. \\
+OpenStack bietet starke Partnerschaften, so aber auch Eucalyptus. CloudStack ist mit Apache allerdings auch gut positioniert. Eucalyptus kann durch die Anbindung an \gls{aws} Punkten.
+\begin{table}[h]
+\begin{tabular}{|p{0.18\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
+\hline
+ & \textbf{CloudStack} & \textbf{Eucalyptus} & \textbf{Open Stack} \\ \hline
+Installation  &  ok  & ok & schwer   \\
+Security  & ok & ok - gut &         gut            \\ 
+Features & Load Balancing  & AWS &                     \\ 
+GUI  &  sehr gut  & ok aber limitiert&         viele CLIs  ?          \\ 
+Unterstützer / Eigentümer  & Apache & HP, Amazon &       ?           \\ 
+Communities  & gut & mittel &       gut   ?        \\ 
+Aussichten auf lange Sicht  & gut & ok &       gut ?          \\ 
+Dokumentation & ? & ok &       ?          \\ 
+\hline
+\end{tabular}
+\end{table}
+Diese \gls{iaas}-Lösungen fuer private Clouds liefern sich, so sind sich auch die meisten Vergleiche einig, allerdings ein Kopf-an-Kopf rennen. \\
+Trotzdem würden wir allen vorran Apache CloudStack empfehlen, sowie Eucalyptus. \cite{allthreeverg}
+
+
+
+\todo{stuff}
+
+OpenStack hat mitte April angegeben, dass an seinen Konferenzen 3,000 Personen teilnehmen, 500 verschiedene Code contributors sowie 8,500 downloads der neusten Release.
+
+
+
+ 
+
 
 \bibliography{sources} \thispagestyle{fancy}
 \bibliographystyle{alpha} \thispagestyle{fancy}
