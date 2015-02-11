@@ -161,9 +161,9 @@ Siegel \textsc{Hannah}
 %\automark{section}
 %\ofoot{\pagemark/n}
 
-\chapter{Einfürhung} \thispagestyle{fancy}
-Grundsätzlich handelt es sich bei allen Produkten um Cloud-Plattformen.
-%TODO
+%\chapter{Einfürhung} \thispagestyle{fancy}
+%Grundsätzlich handelt es sich bei allen Produkten um Cloud-Plattformen.
+%%TODO
 \chapter{Apache CloudStack} \thispagestyle{fancy}
 \section{Historische Entwicklung \cite{apachehistory,apacheusers}}
 Apache Cloudstack begann als Projekt des Start-Up Unternehmens VMOps und wurde im Jahr 2008 bekannt. Später änderte sich der Name des Unternehmens in Cloud.com und im Mai 2010 wurde der Großteil der Sources unter der GNU General Public License version 3 (GPLv3) veröffentlicht.\\\\
@@ -325,7 +325,7 @@ Für die Minimalrealisierung müssen die Komponente Compute und der Identity Ser
 Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen.
 \section{Dokumentation}
 Open Stack geniest eine Umfangreiche Dokumentation über die API's seiner Komponenten und liefert darüber hinaus detailiierte, textuelle beschreibungen der Funktionsweise, sowie Code-Beispiele zu den Methoden.\\
-Die folgenden Linux Umgebungen sind ofiziell dokumentiert:
+Die folgenden Linux Umgebungen sind offiziell dokumentiert:
 \begin{itemize}
 	\item Ubuntu 14.04
 	\item Fedora 20
@@ -333,10 +333,39 @@ Die folgenden Linux Umgebungen sind ofiziell dokumentiert:
 \end{itemize}
 Auf den Distributionen Open SUSE und Debian ist Open Stack zwar ebenfalls gepackaged und Lauffähig, allerdings ist man bei Hilfe auf Foren und Communities angewiesen.
 Darüber hinaus stehen dem Entwickler ein Wiki und ein Forum zur Verfügung, um mehr wissen zu erlangen oder sich mit anderen Auszutauschen.\\
-Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden.
+Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden. 
 
 \chapter{Fazit} \thispagestyle{fancy}
-%TODO
+Apache CloudStack ist ein (fast) fertiges Produkt. Mann muss hier nicht mehr viel selbst machen.\\
+OpenStack ist eher ein Framework, es muss durch eigene Entwicklung angepasst werden und man muss sich hierbei besser auskennen.\cite{OSundAVerg} OpenStack wird eher von grossen Firmen verwendet, und auf Grund der Komplezität auch oft über einen Provider verwendet. \cite{allthreeverg}. \\
+OpenStack bietet starke Partnerschaften, so aber auch Eucalyptus. CloudStack ist mit Apache allerdings auch gut positioniert. Eucalyptus kann durch die Anbindung an \gls{aws} Punkten.
+\begin{table}[h]
+\begin{tabular}{|p{0.18\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
+\hline
+ & \textbf{CloudStack} & \textbf{Eucalyptus} & \textbf{Open Stack} \\ \hline
+Installation  &  ok  & ok & schwer   \\
+Security  & ok & ok - gut &         gut            \\ 
+Features & Load Balancing  & AWS &                     \\ 
+GUI  &  sehr gut  & ok aber limitiert&         viele CLIs  ?          \\ 
+Unterstützer / Eigentümer  & Apache & HP, Amazon &       ?           \\ 
+Communities  & gut & mittel &       gut   ?        \\ 
+Aussichten auf lange Sicht  & gut & ok &       gut ?          \\ 
+Dokumentation & ? & ok &       ?          \\ 
+\hline
+\end{tabular}
+\end{table}
+Diese \gls{iaas}-Lösungen fuer private Clouds liefern sich, so sind sich auch die meisten Vergleiche einig, allerdings ein Kopf-an-Kopf rennen. \\
+Trotzdem würden wir allen vorran Apache CloudStack empfehlen, sowie Eucalyptus. \cite{allthreeverg}
+
+
+
+\todo{stuff}
+
+OpenStack hat mitte April angegeben, dass an seinen Konferenzen 3,000 Personen teilnehmen, 500 verschiedene Code contributors sowie 8,500 downloads der neusten Release.
+
+
+
+ 
 
 
 \bibliography{sources} \thispagestyle{fancy}
