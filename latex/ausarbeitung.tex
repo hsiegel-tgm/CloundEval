@@ -78,7 +78,7 @@ right  = 3cm]{geometry}
 
 \title{Vergleich\\von Cloud-Stack Lösungen}
 
-\author{Belinic Vennesa}
+\author{Belinić Vennesa, Haidn Martin, Siegel Hannah}
 
 \date{\today}
 
@@ -108,7 +108,7 @@ right  = 3cm]{geometry}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
-\fancyfoot[L]{© Belinić Vennesa}
+\fancyfoot[L]{© Belinić Vennesa, Haidn Martin, Siegel Hannah}
 \fancyfoot[R]{\thepage / \pageref{lastpage}}
 
 \renewcommand{\headrulewidth}{0pt}
@@ -274,6 +274,7 @@ Seit September 2014 als Teil von \gls{hp}, ist nun die Version 4 von Eucalyptus 
 Im Jahre 2012 wurde von Eucalyptus und Amazon eine technologische Partnerschaft angekündigt, in welcher sie erklären, dass auch in Zukunft von beiden Seiten eine Kompatibilität gewährleistet werden soll.\cite{EucalyptusAWSPart} \\
 Daher stehen sowohl \gls{hp} als auch Amazon hinter Eucalyptus und so sind zwei starke Firmen vorhanden.\\
 \\
+\newpage
 Zu den von Eucalyptus angeführten Kunden zaehlen unter anderem:
 \begin{itemize}
 \item NASA
@@ -283,7 +284,7 @@ Zu den von Eucalyptus angeführten Kunden zaehlen unter anderem:
 \item Wirtschaftsuniveristät Wien (WU)
 \item University of Oxford
 \end{itemize}
-\cite{EucalyptusCustomers}
+\cite{EucalyptusCustomers} \\
 \section{Lizenz}
 \subsection{Ubuntu Enterprise Cloud (UEC)}
 Die Ubuntu Enterprise Cloud (UEC) ist bei der Ubuntu Server Edition dabei. Canonical übernimmt den technischen support für UEC. \cite{EucalyptusBegGuide}
@@ -316,9 +317,11 @@ Support an Werktagen
 24/7 Support \\
 Schnelle Bearbeitung
 \end{minipage}
+\\
 \cite{EucalyptusPric}
 \section{Features}
 Eucalyptus ist besonders auf \gls{iaas} spezialisiert.
+\newpage
 \section{Voraussetzungen}
 Pro Server gilt:
 \begin{itemize}
@@ -330,7 +333,7 @@ Pro Server gilt:
 \item Mindestens 4GB RAM
 \item Mindestens 1Gb Ethernet Netzwerk Anschluss
 \end{itemize}
-Andere Vorraussetzungen für spezielle Features existieren. \cite{EucalyptusRequ}
+Andere Vorraussetzungen für spezielle Features existieren. \cite{EucalyptusRequ} \\
 \section{Dokumentation}
 Die Dokumentation kann online (\cite{EucalyptusDoc}) eingesehen werden.
 Sie ist sehr umfangreich und auf englisch.
@@ -347,12 +350,13 @@ In Kooperation mit der NASA, Dell und Citrix Systems wurde im Anschluss das Open
 Folgende Unternehmen waren während der Entwickling involviert:
 
 \begin{table}[h]
-\begin{tabular}{|c|c|c|c}
+\begin{tabular}{|c|c|c|c|}
 \hline
 \textbf{Open  SUSE Gmbh} & \textbf{Canonical} & \textbf{Hewlett-Packard} &                                 \\ \hline
 \textbf{AMD}             & \textbf{Intel}     & \textbf{Red Hat}         &\textbf{IBM} 					   \\ \hline
 \end{tabular}
-\end{table} \cite{RS-WikiEntry}\cite{OS-WikiEntry}
+\end{table} \cite{RS-WikiEntry}\cite{OS-WikiEntry} \\\\\\
+OpenStack hat mitte April angegeben, dass an seinen Konferenzen 3,000 Personen teilnehmen, 500 verschiedene Code contributors sowie 8,500 downloads der neusten Release. \cite{allthreeverg}\\\\
 \section{Lizenz}
 Open Stack ist als freie Software unter der Apache-Lizenz veröffentlicht, womit sie frei verwendet, modifiziert und verteilt werden darf, sofern der Copyright Owner genannt wird und eine Kopie der lizenz beiliegt.\cite{OS-WikiEntry}
 
@@ -403,7 +407,7 @@ Für die Minimalrealisierung müssen die Komponente Compute Node und Controller 
 	\item Controller Node - 1 Prozessor, 2 GB Memory, 5 GB Storage
 	\item Compute Node - 1 Prozessor, 512 Memory, 5 GB Storage\\\\
 \end{itemize}
-Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen. \cite{OS-BasicEnvironment} 
+Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen. \cite{OS-BasicEnvironment} \\
 \section{Dokumentation}
 Open Stack geniest eine Umfangreiche Dokumentation über die API's seiner Komponenten und liefert darüber hinaus detailiierte, textuelle beschreibungen der Funktionsweise, sowie Code-Beispiele zu den Methoden.\\
 Die folgenden Linux Umgebungen sind offiziell dokumentiert:
@@ -423,24 +427,21 @@ OpenStack bietet starke Partnerschaften, so aber auch Eucalyptus. CloudStack ist
 \begin{tabular}{|p{0.18\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|}
 \hline
  & \textbf{CloudStack} & \textbf{Eucalyptus} & \textbf{Open Stack} \\ \hline
-Installation  &  ok  & ok & schwer   \\
-Security  & ok & ok - gut &         gut            \\ 
-GUI  &  sehr gut  & ok aber limitiert&      sehr gut          \\ 
+Installation  &  ok  & ok & umfangreich   \\
+Security  & ok & gut &         gut            \\ 
+GUI  &  sehr gut  & gut aber limitiert&      sehr gut          \\ 
 Unterstützer / Eigentümer  & gut & gut & sehr gut \\ 
-Communities  & gut & ok & gut  \\ 
+Communities  & gut & gut & gut  \\ 
 Aussichten auf lange Sicht  & gut & ok & gut \\ 
-Dokumentation & ? & ok &  sehr gut \\ 
+Dokumentation & ? & gut &  sehr gut \\ 
 \hline
 \end{tabular}
 \end{table}
+\FloatBarrier
 Diese \gls{iaas}-Lösungen für private Clouds liefern sich, so sind sich auch die meisten Vergleiche einig, allerdings ein Kopf-an-Kopf rennen. \\
 Trotzdem würden wir allen vorran Apache CloudStack empfehlen, sowie Eucalyptus. \cite{allthreeverg}
 OpenStack ist ein zu umfangreiches System, um es im Rahmen des Regelunterrichtes aufzusetzten.
 
-
-\todo{stuff}
-
-OpenStack hat mitte April angegeben, dass an seinen Konferenzen 3,000 Personen teilnehmen, 500 verschiedene Code contributors sowie 8,500 downloads der neusten Release. \cite{allthreeverg}
 
 
 
@@ -449,8 +450,6 @@ OpenStack hat mitte April angegeben, dass an seinen Konferenzen 3,000 Personen t
 
 \bibliography{sources} \thispagestyle{fancy}
 \bibliographystyle{alpha} \thispagestyle{fancy}
-
-\listoffigures \thispagestyle{fancy}
 
 \printglossary[style=tree,title={Glossar}]  \thispagestyle{fancy}
 
