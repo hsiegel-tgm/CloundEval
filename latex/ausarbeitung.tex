@@ -261,16 +261,50 @@ Die Dokumentation kann online (\cite{EucalyptusDoc}) eingesehen werden.
 Sie ist sehr umfangreich und auf englisch.
 
 
-\chapter{Lösung3} \thispagestyle{fancy}
+\chapter{Open Stack} \thispagestyle{fancy}
 \section{Historische Entwicklung}
-welche Firmen stehen dahinter, wo/von wem wird es verwendet?
+Im Jahre 1996 wurde das Unternehmen Cymitar Technology Group von Richard Yoo gegründet, welches der Ursprung von Rackspace war.
+Ein unternehmen, dass sich hauptsächlich mit der Entwicklung von Websites beschäftigte.\\
+Diese, zwischenzeitlich in die Tochtergesellschaft Mosso ausgelagerte Tätigkeit, entwickelte sich rasch zu einem Führenden Anbierter im Berreich Webhosting, da sie Vorreiter als Anbierter von gehostetem Webspace waren.\\
+Nachdem Mosso zu einem bekannten Unternehmen in seiner Branche wurde, wurde es 2008 von Rackspace zurückgekauft und bildete somit die Basis für die Rackspace Cloud.\\
+In Kooperation mit der NASA, Dell und Citrix Systems wurde im Anschluss das Open-Source-Projekt Open Stack iniziiert, welches bis heute bereits zehn Releases hervorbrachte.\\
+\\
+Folgende Unternehmen waren während der Entwickling involviert: \\
+
+\begin{table}[h]
+\begin{tabular}{cccc}
+\textbf{Open  SUSE Gmbh} & \textbf{Canonical} & \textbf{Hewlett-Packard} &              \\
+\textbf{AMD}             & \textbf{Intel}     & \textbf{Red Hat}         & \textbf{IBM}
+\end{tabular}
+\end{table}
 \section{Lizenz}
+Open Stack ist als freie Software unter der Apache-Lizenz veröffentlicht, womit sie frei verwendet, modifiziert und verteilt werden darf, sofern der Copyright Owner genannt wird und eine Kopie der lizenz beiliegt.
 \section{Features}
 (welche as-a-Service Varianten werden unterstützt)
 \section{Voraussetzungen}
-(welche Virtualisierungs-Lösungen werden unterstützt/benötigt)
+Das System läuft ausschließlich auf Linux Sytsemen und wird mit Ubuntu 14.04 empfohlen.\\
+Auf den folgenden Distributionen ist Open Stack allerdings ebenfalls gepackaged und lauffähig:
+\begin{itemize}
+	\item Fedora 20
+	\item CentOS/RHEL 7
+	\item Open SUSE
+	\item Debian
+\end{itemize}
+Genaue Hardwareanforderungen für die Verwendung des Systems findest man leider kaum, allerdings wird im eigenen Q&A-Berreich geschätzt, dass es rund vier bis sechs Gigerbyte sind.\\
+Da das Sytsem auf Python basiert wird solch eine Version benötigt, Empfohlen wird hierbei 2.6 oder 22.7, wobei die Unterstützung von Jango ein Musskriterium ist.
+Für die Minimalrealisierung müssen die Komponente Compute und der Identity Service installiert werden. Der Hersteller schätzt den Umfang dieser Installation auf vier bis sechs Gigerbyte, gibt allerdings keine Informationen über etaige andere Hardware anforderungen.\\
+Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen.
 \section{Dokumentation}
-Umfang und Qualität der
+Open Stack geniest eine Umfangreiche Dokumentation über die API's seiner Komponenten und liefert darüber hinaus detailiierte, textuelle beschreibungen der Funktionsweise, sowie Code-Beispiele zu den Methoden.\\
+Die folgenden Linux Umgebungen sind ofiziell dokumentiert:
+\begin{itemize}
+	\item Ubuntu 14.04
+	\item Fedora 20
+	\item CentOS/RHEL 7
+\end{itemize}
+Auf den Distributionen Open SUSE und Debian ist Open Stack zwar ebenfalls gepackaged und Lauffähig, allerdings ist man bei Hilfe auf Foren und Communities angewiesen.
+Darüber hinaus stehen dem Entwickler ein Wiki und ein Forum zur Verfügung, um mehr wissen zu erlangen oder sich mit anderen Auszutauschen.\\
+Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden.
 
 \chapter{Fazit} \thispagestyle{fancy}
 
