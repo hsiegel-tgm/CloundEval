@@ -1,6 +1,6 @@
-\documentclass[a4paper,nochapterprefix,ngerman,12pt]{scrreprt} 
+\documentclass[a4paper,nochapterprefix,english,12pt]{scrreprt} 
 
-\usepackage[german]{babel}
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{fancyhdr}
@@ -269,18 +269,50 @@ Diese, zwischenzeitlich in die Tochtergesellschaft Mosso ausgelagerte Tätigkeit
 Nachdem Mosso zu einem bekannten Unternehmen in seiner Branche wurde, wurde es 2008 von Rackspace zurückgekauft und bildete somit die Basis für die Rackspace Cloud.\\
 In Kooperation mit der NASA, Dell und Citrix Systems wurde im Anschluss das Open-Source-Projekt Open Stack iniziiert, welches bis heute bereits zehn Releases hervorbrachte.\\
 \\
-Folgende Unternehmen waren während der Entwickling involviert: \\
+Folgende Unternehmen waren während der Entwickling involviert:
 
 \begin{table}[h]
-\begin{tabular}{cccc}
-\textbf{Open  SUSE Gmbh} & \textbf{Canonical} & \textbf{Hewlett-Packard} &              \\
-\textbf{AMD}             & \textbf{Intel}     & \textbf{Red Hat}         & \textbf{IBM}
+\begin{tabular}{|c|c|c|c}
+\hline
+\textbf{Open  SUSE Gmbh} & \textbf{Canonical} & \textbf{Hewlett-Packard} &                                 \\ \hline
+\textbf{AMD}             & \textbf{Intel}     & \textbf{Red Hat}         &\textbf{IBM} 					   \\ \hline
 \end{tabular}
-\end{table}
+\end{table} \cite{RS-WikiEntry}\citep{OS-WikiEntry}
 \section{Lizenz}
-Open Stack ist als freie Software unter der Apache-Lizenz veröffentlicht, womit sie frei verwendet, modifiziert und verteilt werden darf, sofern der Copyright Owner genannt wird und eine Kopie der lizenz beiliegt.
+Open Stack ist als freie Software unter der Apache-Lizenz veröffentlicht, womit sie frei verwendet, modifiziert und verteilt werden darf, sofern der Copyright Owner genannt wird und eine Kopie der lizenz beiliegt.\citep{OS-WikiEntry}
+
+\newpage
 \section{Features}
-(welche as-a-Service Varianten werden unterstützt)
+Das Open Stack Cloud-System besteht aus einer vielzahl an Komponenten, die abhängig vom Anwendungsfall installiert oder weggelassen werden können.\\
+Diese Komponenten werden als Nodes bezeichnet von denen die zwei folgenden die Basis für jede Open Stack instanz darstellen:
+\begin{itemize}
+	\item \textbf{Controller Node}
+	\item \textbf{Compute Node}\\
+		  Auch Nova genannt. Ermöglicht die Verwaltung von Gruppen auf virtuellen Maschienen.\\
+\end{itemize}
+Die folgenden Komponenten erweiteren das Open Stack Cloud System auf:
+\begin{itemize}
+	\item \textbf{Object Storage}\\
+		Wird von Compute Node (Nova) für Redundante Datenspeicherung genutzt.
+	\item \textbf{Image Service}\\
+		Stellt Images von virtuellen Maschienen für die Cloudnutzer zu Verfügung.
+	\item \textbf{Identity}\\
+		Dienst als Zentrales Authentifizierungsmodul zwischen allen Open Stack Komponenten.
+	\item \textbf{Dashboard}\\
+		Webinterface für die Verwaltung des Cloudsystes und seiner Komponenten.
+	\item \textbf{Block Storage}
+		Virtueller Blockspeicher in Form von virtualisierten Speichermedien. Dieser Speicher kann in weiterer Folge als Laufwerk in die virtuellen Instanzen eingehängt werden.
+	\item \textbf{Networking}\\
+		Verwaltung von Netzwerken, Subnetzen, IP-Addressen etc.. Mit diesem Modul können auch VLAN's und VPN's eingerichtet werden. Zusätzlich steht ein Loadbalancer und ein Healthmonitor zur Verfügung.
+	\item \textbf{Database Service}\\
+		Bereitstellung von SQL und NoSQL Datenbanken als Service. (DBaaS)
+	\item \textbf{Orchestration}\\
+		Erstellung von Konfigurationen aus verschiedenen Cloud-Componenten als sogenannte Stacks, mit deren Hilfe sich sogar ganze Infrastrukturen automatisiert erstellen lassen.
+	\item \textbf{Telemetry}\\
+		Bereitsstellung von Nutzung und Leistungszahlen für berechnung von beispielsweise Sttatistiken und Auslastungen. \citep{OS-WikiEntry} \cite{OS-NodeTrainingGuide} \citep{OS-WikiEntry}
+		
+\end{itemize}
+
 \section{Voraussetzungen}
 Das System läuft ausschließlich auf Linux Sytsemen und wird mit Ubuntu 14.04 empfohlen.\\
 Auf den folgenden Distributionen ist Open Stack allerdings ebenfalls gepackaged und lauffähig:
@@ -290,10 +322,15 @@ Auf den folgenden Distributionen ist Open Stack allerdings ebenfalls gepackaged 
 	\item Open SUSE
 	\item Debian
 \end{itemize}
-Genaue Hardwareanforderungen für die Verwendung des Systems findest man leider kaum, allerdings wird im eigenen Q&A-Berreich geschätzt, dass es rund vier bis sechs Gigerbyte sind.\\
-Da das Sytsem auf Python basiert wird solch eine Version benötigt, Empfohlen wird hierbei 2.6 oder 22.7, wobei die Unterstützung von Jango ein Musskriterium ist.
-Für die Minimalrealisierung müssen die Komponente Compute und der Identity Service installiert werden. Der Hersteller schätzt den Umfang dieser Installation auf vier bis sechs Gigerbyte, gibt allerdings keine Informationen über etaige andere Hardware anforderungen.\\
-Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen.
+
+Da das Sytsem auf Python basiert wird solch eine Version benötigt, Empfohlen wird hierbei 2.6 oder 2.7, wobei die Unterstützung von Jango ein Musskriterium ist.
+Für die Minimalrealisierung müssen die Komponente Compute Node und Controller Node installiert werden, welche mit den folgenden Hardwareanforderungen definiert sind:\\
+\begin{itemize}
+	\item Controller Node - 1 Prozessor, 2 GB Memory, 5 GB Storage
+	\item Compute Node - 1 Prozessor, 512 Memory, 5 GB Storage\\\\
+\end{itemize}
+Open Stack steht allerdings auch als virtuelle Instanz zur Verfügung und bietet so jedem die Möglichkeit schnell einen Einblick zu bekommen. \cite{OS-BasicEnvironment} 
+
 \section{Dokumentation}
 Open Stack geniest eine Umfangreiche Dokumentation über die API's seiner Komponenten und liefert darüber hinaus detailiierte, textuelle beschreibungen der Funktionsweise, sowie Code-Beispiele zu den Methoden.\\
 Die folgenden Linux Umgebungen sind ofiziell dokumentiert:
@@ -304,7 +341,7 @@ Die folgenden Linux Umgebungen sind ofiziell dokumentiert:
 \end{itemize}
 Auf den Distributionen Open SUSE und Debian ist Open Stack zwar ebenfalls gepackaged und Lauffähig, allerdings ist man bei Hilfe auf Foren und Communities angewiesen.
 Darüber hinaus stehen dem Entwickler ein Wiki und ein Forum zur Verfügung, um mehr wissen zu erlangen oder sich mit anderen Auszutauschen.\\
-Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden.
+Weites werden Seminare und Schulungen angeboten um sich über das System weiter zu bilden. \cite{OS-Docs}
 
 \chapter{Fazit} \thispagestyle{fancy}
 
